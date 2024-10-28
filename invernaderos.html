@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invernaderos Cifuentes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+   
+
+
+    <style>
+        body {
+
+            background-image: url(home/3.jpg);
+            padding-top: 56px;
+            margin: 0;
+        }
+
+        .fondo-imagen {
+            background-image: url(imagenes/1.jpg);
+            background-size: cover;
+            /* Ajusta la imagen para que cubra todo el div */
+            background-position: center;
+            /* Centra la imagen en el div */
+            background-repeat: no-repeat;
+            /* Evita que la imagen se repita */
+            width: 100%;
+            /* Ancho del div */
+            height: 20vh;
+            /* Altura del div */
+            position: relative;
+            padding-bottom: 0;
+
+        }
+
+        .curved {
+            position: relative;
+            background: #e7f0f38c;
+
+            height: 70vh;
+            border-bottom-left-radius: 50% 8%;
+            border-bottom-right-radius: 50% 8%;
+        }
+
+        .curved-div {
+            position: relative;
+            background: transparent;
+            height: 22vh;
+            border-top-left-radius: 50% 80%;
+            border-top-right-radius: 50% 80%;
+            display: flex;
+            /* Añade esta línea */
+            justify-content: center;
+            /* Añade esta línea */
+            align-items: center;
+            /* Añade esta línea para centrar verticalmente */
+        }
+
+        .hero {
+            height: 100vh;
+            background-color: #b2b3a9;
+        }
+
+        .imgenInicial-section img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .navbar {
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .link {
+            margin: 8px;
+            font-size: 0.9em;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-decoration: none;
+            color: #ffffff91;
+            background: url('home/hover.png') repeat-x #ffffff;
+            background-position-x: 0%;
+            background-position-y: 0%;
+            background-size: auto;
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 200% 100%;
+            background-position-x: 0;
+            background-position-y: 2em;
+            -webkit-transition: background-position-y 0.6s ease;
+            transition: background-position-y 0.6s ease;
+            -webkit-animation: waveAnimation 4s infinite linear;
+            animation: waveAnimation 4s infinite linear;
+            animation-play-state: running;
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+
+        }
+
+        .link:hover {
+
+            background-position-x: 0;
+            background-position-y: 0;
+            -webkit-animation-play-state: running;
+            animation-play-state: running;
+        }
+
+        @keyframes waveAnimation {
+            from {
+                background-position-x: 0%;
+            }
+
+            to {
+                background-position-x: 200%;
+            }
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(226, 92, 14, 0.822);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+
+        }
+
+        .custom-carousel {
+            position: relative;
+            /* Esto posicionará el carrusel de forma absoluta dentro de su contenedor */
+            bottom: 20px;
+            /* Ajusta la distancia desde la parte inferior */
+            left: 0;
+            right: 0;
+            /* Asegúrate de que el carrusel ocupe todo el ancho */
+            z-index: 2;
+        }
+
+
+        .custom-carousel img {
+            object-fit: cover;
+            height: 300px;
+            width: 100%;
+
+        }
+
+        .about-section {
+            background-color: #ffffffce;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .about-section-container {
+            background-color: #fff;
+            height: 90%;
+            width: 90%;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .invernadero-section {
+            background-color: #dacac4;
+            padding: 50px 0;
+            z-index: 2;
+        }
+
+        .invernadero-sectionh2 {
+            color: #b2b3a9;
+        }
+
+        .product-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .promotion-section {
+            background-color: #e9ecef;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .portfolio-section {
+            padding: 50px 0;
+        }
+
+        .team-section {
+            background-color: #343a40;
+            color: white;
+            padding: 50px 0;
+        }
+
+        .footer {
+            background-color: #212529;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            /* Centra verticalmente */
+            justify-content: center;
+            /* Centra horizontalmente si es necesario */
+            min-height: 100vh;
+            /* Ajusta para que ocupe toda la altura de la ventana */
+            padding: 20px 0;
+            /* Opcional: agrega algo de espacio superior e inferior */
+        }
+
+        .button-85 {
+            padding: 0.6em 2em;
+            border: none;
+            outline: none;
+            color: rgb(255, 255, 255);
+            background: 4ac946fb;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-85:before {
+            content: "";
+            background: linear-gradient(45deg,
+                    #48ff00,
+                    #fffb00,
+                    #48ff00,
+                    #fffb00,
+                    #48ff00,
+                    #fffb00,
+                    #48ff00,
+                    #fffb00,
+                    #48ff00);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing-button-85 20s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing-button-85 {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .button-85:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #4ac946fb;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        .imghover img {
+            width: 70vh;
+            /* 40 para movil */
+            height: auto;
+            /* Mantén la proporción de la imagen */
+            object-fit: cover;
+            /* Para asegurarte de que la imagen se ajuste bien */
+            transition: transform 0.3s ease;
+            /* Animación para el hover */
+        }
+
+        .imghover img:hover {
+            transform: scale(1.1);
+            /* Efecto de zoom al hacer hover */
+        }
+
+        .unbounded-header {
+            font-family: "Unbounded", sans-serif;
+            font-weight: 700;
+            /* Ajusta el peso según tus necesidades */
+            -webkit-text-stroke: 0.5px rgba(11, 197, 58, 0.39);
+            /* Borde alrededor del texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .btn-wsp{
+            position:fixed;
+            width:60px;
+            height:60px;
+            line-height: 63px;
+            bottom:25px;
+            right:25px;
+            background:#25d366;
+            color:#FFF;
+            border-radius:50px;
+            text-align:center;
+            font-size:35px;
+            box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+            z-index:100;
+            transition: all 300ms ease;
+        }
+        .btn-wsp:hover{
+            background: #20ba5a;
+        }
+        .modal-backdrop {
+             background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        @media only screen and (min-width:320px) and (max-width:768px){
+            .btn-wsp{
+                width:63px;
+                height:63px;
+                line-height: 66px;
+            }
+        }
+        @media (max-width: 768px) {
+            .imghover img {
+                height: 33vh; /* Altura de 30vh para dispositivos móviles */
+                width: auto; /* Mantener el ancho proporcional */
+                display: block;
+                margin: 0 auto; /* Centrar la imagen horizontalmente */
+            }
+            .imghover img:hover{
+                transform: scale(1);
+            }
+            .curved{
+                height: 75vh;
+            }
+            .curved-div {
+                height: 10vh;
+                background-color: transparent;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="fondo-imagen">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: #4ac946fb;">
+            <div class="container">
+                <a href="index.html" class="navbar-brand"><span style="color: #fff;">Invernaderos</span>Cifuentes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+                    aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarS">
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+                <div class="collapse navbar-collapse" id="navbarS">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a href="index.html" class="link">Inicio</a></li>
+                        <li class="nav-item"><a href="#" class="link">Invernaderos</a></li>
+                        <li class="nav-item"><a href="#" class="link">Sistemas de Riego</a></li>
+                        <li class="nav-item"><a href="#" class="link">Hidroponia</a></li>
+                        <li class="nav-item"><a href="#" class="link">Otros Servicios</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+        <a href="https://api.whatsapp.com/send?phone=+51987654321" class="btn-wsp" target="_blank">
+            <i class="fa fa-whatsapp icono"></i>
+        </a>
+        
+        <section class="curved">
+            <div class="container">
+                <div class="row">
+                    <div style="padding-top: 30px;" class="col ">
+                        <h1 class="text-center unbounded-header" style="color: #fff; ">Invernaderos en variedad de
+                            materiales y diseños</h1>
+                        <h4 style="padding: 20px 20px 0px 20px;">Construimos invernaderos con materiales como madera, tubería
+                            galvanizada y acero inoxidable, adaptados a cualquier tipo de clima y cultivo. Trabajamos en
+                            todo el país y el exterior.</h4>
+                    </div>
+                    <div class="col imghover"><img src="home/colombia.png" alt=""></div>
+                </div>
+            </div>
+        </section>
+        <div class="curved-div">
+            <button class="button-85" role="button">
+                <h4>Quiero Cotizar</h4>
+            </button>
+        </div>
+
+
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container text-center about-section-container">
+                <h1 class="mt-n1" style="padding: 20px;">Materiales</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="home/1.jpg" alt="Card image cap">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title" >Madera</h5>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                    Ver imágenes
+                                  </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="home/2.jpg" alt="Card image cap">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title" >Madera</h5>
+                                  <a href="#" class="btn btn-primary" style="background-color: #4ac946fb">Ver mas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" >
+                                <img class="card-img-top" src="home/3.jpg" alt="Card image cap">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title" >Madera</h5>
+                                  <a href="#" class="btn btn-primary" style="background-color: #4ac946fb">Ver mas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="home/hover.png" alt="Card image cap">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title" >Madera</h5>
+                                  <a href="#" class="btn btn-primary" style="background-color: #4ac946fb">Ver mas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                
+                <div class="modal-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" src="home/1.jpg" alt="first slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="home/2.jpg" alt="Second slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="home/3.jpg" alt="Third slide">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+
+
+        <!--Invernadero-->
+
+        <section class="invernadero-section">
+            <div class="container text-center">
+                <h2>Invernaderos</h2>
+                <p>Breve descripción de lo que hacemos en Invernaderos Cifuentes.</p>
+
+        </section>
+
+        <!-- Products Section -->
+        <section class="container my-5">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/200" class="mb-3" alt="">
+                        <h5>Producto 1</h5>
+                        <p>Descripción breve del producto.</p>
+                        <a href="#" class="btn btn-outline-primary">Ver Más</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/200" class="mb-3" alt="">
+                        <h5>Producto 2</h5>
+                        <p>Descripción breve del producto.</p>
+                        <a href="#" class="btn btn-outline-primary">Ver Más</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/200" class="mb-3" alt="">
+                        <h5>Producto 3</h5>
+                        <p>Descripción breve del producto.</p>
+                        <a href="#" class="btn btn-outline-primary">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotion Section -->
+        <section class="promotion-section">
+            <div class="container">
+                <h2>Promociones</h2>
+                <p>¡Ofertas especiales para este mes!</p>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestros Proyectos</h2>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <img src="https://via.placeholder.com/200" class="rounded mb-3" alt="">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://via.placeholder.com/200" class="rounded mb-3" alt="">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://via.placeholder.com/200" class="rounded mb-3" alt="">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://via.placeholder.com/200" class="rounded mb-3" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container text-center">
+                <h2>Conoce a Nuestro Equipo</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="">
+                        <h5>Miembro 1</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="">
+                        <h5>Miembro 2</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="">
+                        <h5>Miembro 3</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="">
+                        <h5>Miembro 4</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                window.addEventListener("scroll", function () {
+                    var navbar = document.querySelector("nav");
+                    if (window.scrollY > 50) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove(scrolled);
+                    }
+                });
+            });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <p>Dirección: Calle Falsa 123, Ciudad, País | Teléfono: +57 123 456 7890 | Email: contacto
